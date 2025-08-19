@@ -7,4 +7,5 @@ import (
 var (
 	FasterThan = assertions.IsFasterThan
 	SlowerThan = assertions.IsSlowerThan
+	NonAllocating = assertions.IsNonAllocating
 )

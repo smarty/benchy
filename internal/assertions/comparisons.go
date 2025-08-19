@@ -39,3 +39,14 @@ func IsSlowerThan(left *BenchmarkResult, right ...*BenchmarkResult) error {
 
 	return nil
 }
+
+func IsNonAllocating(left *BenchmarkResult, right ...*BenchmarkResult) error {
+	if left.Allocations != 0 {
+		return generateError(
+			"expected \"%s\" to not allocate, but it does",
+			AssertionFailedError,
+			left.Name)
+	}
+
+	return nil
+}
